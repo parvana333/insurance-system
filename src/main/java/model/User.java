@@ -11,7 +11,8 @@ public class User {
     private String username;
     private String password;
     private byte status;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="companyId")
     private Company company;
     private LocalDate registrDate;
     private String phoneNumber;

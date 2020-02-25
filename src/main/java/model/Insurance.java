@@ -20,7 +20,8 @@ public class Insurance {
     private LocalDate registrDate;
     @ManyToMany(mappedBy = "insurance")
     private List<Client> client;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="product_id")
     private Product product;
 
     public Insurance() {

@@ -75,11 +75,9 @@ public class Company {
     public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
     }
-
     public byte[] getLogo() {
         return logo;
     }
-
     public void setLogo(byte [] logo) {
         this.logo = logo;
     }

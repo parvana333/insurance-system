@@ -15,7 +15,11 @@ public class Client {
     private String email;
     private String FIN;
     private String phoneNumber;
-    @ManyToMany
+    @ManyToMany()
+    @JoinTable(name="client_insurance",
+               joinColumns =@JoinColumn(name="client_id"),
+               inverseJoinColumns = @JoinColumn(name = "insurance_id")
+               )
     private List<Insurance> insurance;
     public Client() {
     }

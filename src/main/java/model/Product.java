@@ -10,9 +10,10 @@ public class Product {
     private BigDecimal secondAmount;
     private BigDecimal thirdAmount;
     private float comissionCost;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "product")
+    @OneToOne(mappedBy = "product",fetch = FetchType.LAZY)
     private Insurance insurance;
     public Product() {
     }
